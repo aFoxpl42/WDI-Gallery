@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Animacji Studenckich</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="logo">Animacja WIT</span>
+            <div class="nav-links">
+                <a href="#home">Strona Główna</a>
+                <a href="#about">O Przedmiocie</a>
+                <a href="#gallery">Galeria Prac</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Galeria Animacji Studenckich</h1>
+            <p>Najlepsze projekty semestralne z zakresu animacji 2D, 3D oraz motion designu.</p>
+            <a href="#gallery" class="btn">Zobacz Prace</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container about-grid">
+            <div class="course-desc">
+                <h2>O przedmiocie</h2>
+                <p>Przedmiot skupia się na praktycznym zastosowaniu technik animacji cyfrowej. Studenci uczą się zasad animacji klasycznej, riggingu postaci, operowania kamerą w środowisku 3D oraz postprodukcji wideo.</p>
+                <ul>
+                    <li>Semestr 3: Podstawy animacji i motion design.</li>
+                    <li>Semestr 4: Zaawansowana animacja postaci 3D.</li>
+                </ul>
+            </div>
+            
+            <div class="teachers">
+                <h2>Prowadzący</h2>
+                <div class="teacher-card">
+                    <div class="teacher-avatar"></div>
+                    <div class="teacher-info">
+                        <h3>dr inż. Jan Kowalski</h3>
+                        <p>Specjalizacja: Animacja 3D, Rigging, VFX</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2>Galeria Prac</h2>
+
+            <input type="radio" name="filter" id="filter-all" checked>
+            <input type="radio" name="filter" id="filter-sem3">
+            <input type="radio" name="filter" id="filter-sem4">
+
+            <div class="filters">
+                <label for="filter-all" class="filter-btn">Wszystkie</label>
+                <label for="filter-sem3" class="filter-btn">Semestr 3</label>
+                <label for="filter-sem4" class="filter-btn">Semestr 4</label>
+            </div>
+
+            <div class="gallery-grid">
+                <a href="#modal-1" class="gallery-item sem4">
+                    <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hqdefault.jpg" alt="Spring">
+                    <div class="item-content">
+                        <h3>Spring - Short Film</h3>
+                        <p class="author">Anna Nowak</p>
+                        <span class="badge">Semestr 4</span>
+                    </div>
+                </a>
+
+                <a href="#modal-2" class="gallery-item sem3">
+                    <img src="https://img.youtube.com/vi/YE7VzlLtp-4/hqdefault.jpg" alt="Big Buck Bunny">
+                    <div class="item-content">
+                        <h3>Big Buck Bunny</h3>
+                        <p class="author">Michał Wiśniewski</p>
+                        <span class="badge">Semestr 3</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal-1" class="modal">
+        <div class="modal-content">
+            <a href="#gallery" class="close-btn">&times;</a>
+            <div class="modal-header">
+                <h3>Spring - Short Film</h3>
+            </div>
+            <div class="modal-body">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/WhWc3b3KhnY" allowfullscreen></iframe>
+                </div>
+                <div class="modal-details">
+                    <p><strong>Autor:</strong> Anna Nowak</p>
+                    <p><strong>Semestr:</strong> Semestr 4</p>
+                    <p><strong>Opis pracy:</strong> Projekt zaliczeniowy z animacji postaci. Skupiono się na riggingu i płynności ruchów, renderowane w Cycles.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-2" class="modal">
+        <div class="modal-content">
+            <a href="#gallery" class="close-btn">&times;</a>
+            <div class="modal-header">
+                <h3>Big Buck Bunny</h3>
+            </div>
+            <div class="modal-body">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YE7VzlLtp-4" allowfullscreen></iframe>
+                </div>
+                <div class="modal-details">
+                    <p><strong>Autor:</strong> Michał Wiśniewski</p>
+                    <p><strong>Semestr:</strong> Semestr 3</p>
+                    <p><strong>Opis pracy:</strong> Ćwiczenie z synchronizacji ruchu ust (lip sync) i przerysowanej animacji mimiki.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
