@@ -1,4 +1,4 @@
-# WDI-Gallery Dokumentacja Projektu: Galeria Prac Studenckich (Wersja Podstawowa)
+# WDI-Gallery Dokumentacja Projektu: Galeria Prac Studenckich 
 
 **Projekt przygotowany na zaliczenie przedmiotu Wstep do Internetu**
 
