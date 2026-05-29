@@ -1,6 +1,6 @@
-# WDI-Gallery# Dokumentacja Projektu: Galeria Prac Studenckich (Wersja Podstawowa)
+# WDI-Gallery Dokumentacja Projektu: Galeria Prac Studenckich (Wersja Podstawowa)
 
-**Projekt przygotowany na zaliczenie przedmiotu wg wytycznych zadania 02.**
+**Projekt przygotowany na zaliczenie przedmiotu Wstep do Internetu**
 
 ## 1. Architektura i Technologia
 Projekt stanowi wersję podstawową "mockup/frontend", zrealizowaną z zachowaniem zasady minimalizmu i wydajności:
@@ -27,16 +27,7 @@ Przeprowadzono testy poprawności:
 
 ## 4. Instrukcja uruchomienia projektu lokalnie
 
-Z racji tego, że jest to statyczna wersja bazująca wyłącznie na językach znaczników i stylach, aplikacja nie wymaga na ten moment instalowania bazy danych, menedżerów pakietów ani frameworków.
-
-**Metoda 1: Bezpośrednie otwarcie w przeglądarce**
+**Bezpośrednie otwarcie w przeglądarce**
 1. Pobierz lub sklonuj folder z plikami projektu na swój komputer.
 2. Wejdź do folderu projektu.
 3. Kliknij dwukrotnie plik `index.html`. Projekt otworzy się i zadziała w Twojej domyślnej przeglądarce internetowej.
-
-**Metoda 2: Uruchomienie jako serwer lokalny (Zalecane przed wdrożeniem Pythona)**
-Jeżeli masz zainstalowanego Pythona i chcesz zasymulować środowisko serwerowe:
-1. Otwórz terminal (Wiersz poleceń / PowerShell / terminal w IDE).
-2. Użyj polecenia `cd` aby przejść do folderu, w którym znajduje się plik `index.html`.
-3. Wpisz polecenie: `python -m http.server 8000`
-4. Otwórz przeglądarkę i wejdź pod adres: `http://localhost:8000`
