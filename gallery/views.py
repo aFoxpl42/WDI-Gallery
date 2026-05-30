@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.contrib.auth.views import LoginView
+from django.contrib import messages
 from .models import Artwork
 
 def home_page(request):
@@ -8,3 +10,8 @@ def home_page(request):
         'artworks': artworks_from_db
     }
     return render(request, 'gallery/index.html', context)
+
+class CustomLoginView(LoginView):
+    def form_valid(self, form):
+        messages.success(self.request, f"Logowanie poprawne, {form.get_user().username}")
+        return super().form_valid(form)
