@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria Animacji Studenckich</title>
-    <link rel="stylesheet" href="{% static 'gallery/style.css' %}">
+    <link rel="stylesheet" href="{% static 'gallery/style.css' %}?v=1">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-container">
-            <span class="logo">Animacja WIT</span>
+            <div class="logo-container">
+                <img src="{% static 'gallery/wit_logo.png' %}" alt="WIT Academy Logo" class="nav-logo">
+                <span class="logo-text">WIT Animacje 3D</span>
+            </div>
             <div class="nav-links">
                 <a href="#home">Strona Główna</a>
                 <a href="#about">O Przedmiocie</a>

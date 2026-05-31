@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CMS Dashboard</title>
-    <link rel="stylesheet" href="{% static 'gallery/style.css' %}">
+    <link rel="stylesheet" href="{% static 'gallery/style.css' %}?v=1">
     <style>
         .dashboard-container {
             max-width: 1000px;
@@ -52,7 +52,10 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <span class="logo">WIT Animacje 3D</span>
+            <div class="logo-container">
+                <img src="{% static 'gallery/wit_logo.png' %}" alt="WIT Academy Logo" class="nav-logo">
+                <span class="logo-text">WIT Animacje 3D</span>
+            </div>
             <div class="nav-links">
                 <a href="{% url 'home_page' %}">Otworz Galerie</a>
                 <form method="post" action="{% url 'logout' %}" style="display: inline; margin-left: 15px;">
