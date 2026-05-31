@@ -14,6 +14,19 @@ class ArtworkForm(forms.ModelForm):
             'youtube_link':'ID wideo z YouTube (np. WhWc3b3KhnY)',
         }
 
+    def clean_youtube_link(self):
+        data = self.cleaned_data.get('youtube_link')
+        if not data:
+            return data
+        
+        if len(data) != 11:
+            raise forms.ValidationError("Nieprawidlowe ID. ID wideo z YouTube musi miec 11 znakow.")
+        
+        if " " in data:
+            raise forms.ValidationError("Nieprawidlowe ID. ID wideo z YouTube nie moze miec spacji.")
+        
+        return data
+
     def clean(self):
         cleaned_data = super().clean()
         video = cleaned_data.get('video')
@@ -28,3 +41,4 @@ class ArtworkForm(forms.ModelForm):
             raise forms.ValidationError("You must provide either an animation file or a YouTube link.")
 
         return cleaned_data
+    

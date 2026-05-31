@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria Animacji Studenckich</title>
-    <link rel="stylesheet" href="{% static 'gallery/style.css' %}?v=1">
+    <link rel="stylesheet" href="{% static 'gallery/style.css' %}?v=2">
 </head>
 <body>
 
@@ -30,7 +30,7 @@
                         <button type="submit" style="background: none; border: none; color: #e74c3c; font-weight: bold; cursor: pointer; font-size: 16px;">Logout</button>
                     </form>
                 {% else %}
-                    <a href="{% url 'login' %}" style="color: #e74c3c; font-weight: bold;">Prowadzacy</a>
+                    <a href="{% url 'login' %}" style="color: #e74c3c; font-weight: bold;">Prowadzący</a>
                 {% endif %}
             </div>
         </div>
@@ -85,12 +85,20 @@
             <div class="gallery-grid">
                 {% for artwork in artworks %}
                 <a href="#modal-{{ artwork.id }}" class="gallery-item {{ artwork.semester }}">
-                    <img src="https://img.youtube.com/vi/{{ artwork.youtube_id }}/hqdefault.jpg" alt="{{ artwork.title }}">
+                    
+                    {% if artwork.image %}
+                        <img src="{{ artwork.image.url }}" alt="{{ artwork.title }}">
+                    {% elif artwork.youtube_link %}
+                        <img src="https://img.youtube.com/vi/{{ artwork.youtube_link }}/hqdefault.jpg" alt="{{ artwork.title }}">
+                    {% else %}
+                        <div style="height: 200px; background: #ecf0f1; display: flex; align-items: center; justify-content: center; color: #95a5a6; font-weight: bold;">Brak okładki</div>
+                    {% endif %}
+
                     <div class="item-content">
                         <h3>{{ artwork.title }}</h3>
                         <p class="author">{{ artwork.author }}</p>
                         <span class="badge">
-                            {% if artwork.semester == 'sem3' %}Semester 3{% else %}Semester 4{% endif %}
+                            {% if artwork.semester == 'sem3' %}Semestr 3{% else %}Semestr 4{% endif %}
                         </span>
                     </div>
                 </a>
@@ -99,26 +107,7 @@
         </div>
     </section>
 
-    <div id="modal-1" class="modal">
-        <div class="modal-content">
-            <a href="#gallery" class="close-btn">&times;</a>
-            <div class="modal-header">
-                <h3>Spring - Short Film</h3>
-            </div>
-            <div class="modal-body">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/WhWc3b3KhnY" allowfullscreen></iframe>
-                </div>
-                <div class="modal-details">
-                    <p><strong>Autor:</strong> Anna Nowak</p>
-                    <p><strong>Semestr:</strong> Semestr 4</p>
-                    <p><strong>Opis pracy:</strong> Projekt zaliczeniowy z animacji postaci. Skupiono się na riggingu i płynności ruchów, renderowane w Cycles.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-{% for artwork in artworks %}
+    {% for artwork in artworks %}
     <div id="modal-{{ artwork.id }}" class="modal">
         <div class="modal-content">
             <a href="#gallery" class="close-btn">&times;</a>
@@ -127,12 +116,24 @@
             </div>
             <div class="modal-body">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/{{ artwork.youtube_id }}" allowfullscreen></iframe>
+                    
+                    {% if artwork.video %}
+                        <video width="100%" height="100%" controls style="border-radius: 5px;">
+                            <source src="{{ artwork.video.url }}" type="video/mp4">
+                            Twoja przeglądarka nie obsługuje wideo.
+                        </video>
+                    {% elif artwork.youtube_link %}
+                        <iframe src="https://www.youtube.com/embed/{{ artwork.youtube_link }}" allowfullscreen></iframe>
+                    {% else %}
+                        <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white;">
+                            Brak wideo.
+                        </div>
+                    {% endif %}
+
                 </div>
                 <div class="modal-details">
-                    <p><strong>Author:</strong> {{ artwork.author }}</p>
-                    <p><strong>Semester:</strong> {% if artwork.semester == 'sem3' %}Semester 3{% else %}Semester 4{% endif %}</p>
-                    <p><strong>Description:</strong> {{ artwork.description }}</p>
+                    <p><strong>Autor:</strong> {{ artwork.author }}</p>
+                    <p><strong>Semestr:</strong> {% if artwork.semester == 'sem3' %}Semestr 3{% else %}Semestr 4{% endif %}</p>
                 </div>
             </div>
         </div>
