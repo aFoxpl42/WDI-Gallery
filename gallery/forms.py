@@ -27,6 +27,7 @@ class ArtworkForm(forms.ModelForm):
         
         return data
 
+
     def clean(self):
         cleaned_data = super().clean()
         video = cleaned_data.get('video')

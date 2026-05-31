@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuń Pracę</title>
+    <link rel="stylesheet" href="{% static 'gallery/style.css' %}?v=1">
+    <style>
+        .delete-container { max-width: 500px; margin: 80px auto; padding: 30px; background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; }
+    </style>
+</head>
+<body style="background: #f4f4f9;">
+
+    <div class="delete-container">
+        <h2 style="color: #e74c3c; margin-bottom: 15px;">Potwierdź Usunięcie</h2>
+        <p>Czy na pewno chcesz usunąć pracę <strong>"{{ artwork.title }}"</strong> autorstwa <strong>{{ artwork.author }}</strong>?</p>
+        <p style="color: #7f8c8d; font-size: 14px; margin-bottom: 30px;">Tej operacji nie można cofnąć.</p>
+        
+        <form method="post">
+            {% csrf_token %}
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <button type="submit" style="background: #e74c3c; color: white; border: none; padding: 10px 20px; border-radius: 4px; font-weight: bold; cursor: pointer;">Tak, Usuń</button>
+                <a href="{% url 'dashboard' %}" style="text-decoration: none; padding: 10px 20px; background: #95a5a6; color: white; border-radius: 4px;">Anuluj</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
