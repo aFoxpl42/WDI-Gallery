@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.core.validators import FileExtensionValidator
 
 class Artwork(models.Model):
@@ -6,6 +7,8 @@ class Artwork(models.Model):
         ('sem3', 'Semestr 3'),
         ('sem4', 'Semestr 4'),
     ]
+    
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
     title = models.CharField(max_length=200, verbose_name="Tytuł pracy")
     author = models.CharField(max_length=100, verbose_name="Autor (Imię i nazwisko)")
@@ -26,3 +29,15 @@ class Artwork(models.Model):
     class Meta:
         verbose_name = "Praca studencka"
         verbose_name_plural = "Prace studenckie"
+        
+        
+        
+# TODO: jonskid access to everything - superuser - admin
+# TODO: user change password
+# TODO: maybe adding group of users with same permissions - teachers // kind of pointless tho
+# TODO: connecting 'prowadzacy' on home_page with users
+# TODO: adding info about teacher when opening animation from gallery
+# TODO: RESPOSNSIVE DESIGN!!!
+# TODO: ??? new features maybe
+# TODO: hosting - last step
+# TODO: updating docs

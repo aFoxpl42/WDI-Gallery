@@ -90,8 +90,8 @@
                     <td>{% if artwork.semester == 'sem3' %}Semestr 3{% else %}Semestr 4{% endif %}</td>
                     <td>{{ artwork.created_at|date:"M d, Y" }}</td>
                     <td>
-                        <a href="#" class="action-btn btn-edit">Edytuj</a>
-                        <a href="#" class="action-btn btn-delete">Usun</a>
+                        <a href="{% url 'edit_artwork' artwork.id %}" class="action-btn btn-edit">Edytuj</a>
+                        <a href="{% url 'delete_artwork' artwork.id %}" class="action-btn btn-delete">Usun</a>
                     </td>
                 </tr>
                 {% empty %}
