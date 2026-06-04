@@ -8,10 +8,22 @@ class Artwork(models.Model):
         ('sem4', 'Semestr 4'),
     ]
     
+    ACADEMIC_YEAR_CHOICES = [
+        ('2023/2024', '2023/2024'),
+        ('2024/2025', '2024/2025'),
+        ('2025/2026', '2025/2026'),
+    ]
+    
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
     title = models.CharField(max_length=200, verbose_name="Tytuł pracy")
     author = models.CharField(max_length=100, verbose_name="Autor (Imię i nazwisko)")
+    academic_year = models.CharField(
+        max_length=9,
+        choices=ACADEMIC_YEAR_CHOICES,
+        default='2025/2026',
+    )
+    
     semester = models.CharField(max_length=10, choices=SEMESTERS, verbose_name="Semestr")
     image = models.ImageField(upload_to='artworks/images', null=True, blank=True)
     video = models.FileField(
@@ -32,8 +44,9 @@ class Artwork(models.Model):
         
         
         
-# TODO: jonskid access to everything - superuser - admin
-# TODO: user change password
+# TODO: user way to change password
+# TODO: way to add academic year to artwork
+# TODO: divide artworks in gallery into groups based on academic year and sort them from latest to oldest
 # TODO: maybe adding group of users with same permissions - teachers // kind of pointless tho
 # TODO: connecting 'prowadzacy' on home_page with users
 # TODO: adding info about teacher when opening animation from gallery
