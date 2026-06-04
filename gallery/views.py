@@ -1,16 +1,19 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import Artwork
 from .forms import ArtworkForm
 
 def home_page(request):
-    artworks_from_db = Artwork.objects.all().order_by('-academic_year','-created_at')
+    artworks = Artwork.objects.all().order_by('-academic_year', '-created_at')
+    teachers = User.objects.filter(is_superuser=False)
     
     context = {
-        'artworks': artworks_from_db
-    }
+        'artworks': artworks,
+        'teachers': teachers,
+    }    
     return render(request, 'gallery/index.html', context)
 
 class CustomLoginView(LoginView):

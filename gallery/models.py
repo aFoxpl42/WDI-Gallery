@@ -44,12 +44,8 @@ class Artwork(models.Model):
         
         
         
-# TODO: user way to change password
-# TODO: way to add academic year to artwork
 # TODO: divide artworks in gallery into groups based on academic year and sort them from latest to oldest
 # TODO: maybe adding group of users with same permissions - teachers // kind of pointless tho
-# TODO: connecting 'prowadzacy' on home_page with users
-# TODO: adding info about teacher when opening animation from gallery
 # TODO: RESPOSNSIVE DESIGN!!!
 # TODO: ??? new features maybe
 # TODO: hosting - last step
