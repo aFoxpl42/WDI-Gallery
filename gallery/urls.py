@@ -11,4 +11,11 @@ urlpatterns = [
     path('dashboard/edit/<int:pk>/', views.edit_artwork, name='edit_artwork'),
     path('dashboard/delete/<int:pk>/', views.delete_artwork, name='delete_artwork'),
     
+    path('password_change/', auth_views.PasswordChangeView.as_view(
+        template_name = 'gallery/password_change.html',
+        success_url='/password_change/done/'
+    ), name='password_change'),
+    path('password_change_done', auth_views.PasswordChangeDoneView.as_view(
+        template_name = 'gallery/password_change_done.html',
+    ), name = 'password_change_done'),
 ]

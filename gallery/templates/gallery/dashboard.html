@@ -57,7 +57,8 @@
                 <span class="logo-text">WIT Animacje 3D</span>
             </div>
             <div class="nav-links">
-                <a href="{% url 'home_page' %}">Otworz Galerie</a>
+                <a href="/#gallery">Otworz Galerie</a>
+                <a href="{% url 'password_change' %}" class="btn" style="background: #95a5a6; margin-left: 10px;">⚙️ Zmień hasło</a>
                 <form method="post" action="{% url 'logout' %}" style="display: inline; margin-left: 15px;">
                     {% csrf_token %}
                     <button type="submit" style="background: none; border: none; color: #e74c3c; font-weight: bold; cursor: pointer; font-size: 16px;">Wyloguj</button>

@@ -6,7 +6,7 @@ from .models import Artwork
 from .forms import ArtworkForm
 
 def home_page(request):
-    artworks_from_db = Artwork.objects.all().order_by('-created_at')
+    artworks_from_db = Artwork.objects.all().order_by('-academic_year','-created_at')
     
     context = {
         'artworks': artworks_from_db
@@ -20,7 +20,7 @@ class CustomLoginView(LoginView):
     
 @login_required(login_url='login')
 def dashboard_view(request):
-    artworks = Artwork.objects.filter(owner=request.user).order_by('-created_at')
+    artworks = Artwork.objects.filter(owner=request.user).order_by('-academic_year', '-created_at')
     context = {'artworks' : artworks}
     return render(request, 'gallery/dashboard.html', context)
 

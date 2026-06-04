@@ -4,11 +4,12 @@ from .models import Artwork
 class ArtworkForm(forms.ModelForm):
     class Meta:
         model = Artwork
-        fields = ['title', 'author', 'semester', 'image', 'video', 'youtube_link']
+        fields = ['title', 'author', 'academic_year', 'semester', 'image', 'video', 'youtube_link']
         
         labels = {
             'title': 'Tytul pracy',
             'author': 'Autor (Imie i Nazwisko)',
+            'academic_year': 'Rok akademicki',
             'image': 'Obraz',
             'video': 'Wideo',
             'youtube_link':'ID wideo z YouTube (np. WhWc3b3KhnY)',
