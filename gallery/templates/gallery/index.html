@@ -57,13 +57,21 @@
             
             <div class="teachers">
                 <h2>Prowadzący</h2>
+                
+                {% for teacher in teachers %}
                 <div class="teacher-card">
-                    <div class="teacher-avatar"></div>
+                    <div class="teacher-avatar" style="display: flex; align-items: center; justify-content: center; background: #3498db; color: white; font-size: 24px; font-weight: bold;">
+                        {{ teacher.username|make_list|first|upper }}
+                    </div>
                     <div class="teacher-info">
-                        <h3>dr inż. Jan Kowalski</h3>
-                        <p>Specjalizacja: Animacja 3D, Rigging, VFX</p>
+                        <h3>{% if teacher.first_name %}{{ teacher.get_full_name }}{% else %}{{ teacher.username }}{% endif %}</h3>
+                        <p>Wykładowca WIT</p>
                     </div>
                 </div>
+                {% empty %}
+                    <p style="color: #7f8c8d;">Brak zarejestrowanych prowadzących.</p>
+                {% endfor %}
+                
             </div>
         </div>
     </section>
@@ -130,8 +138,17 @@
                     {% endif %}
                 </div>
                 <div class="modal-details">
-                    <p><strong>Autor:</strong> {{ artwork.author }}</p>
-                    <p><strong>Semestr:</strong> {% if artwork.semester == 'sem3' %}Semestr 3{% else %}Semestr 4{% endif %}</p>
+                    <p><strong>Autor (Student):</strong> {{ artwork.author }}</p>
+                    <p><strong>Prowadzący:</strong> {% if artwork.owner.first_name %}{{ artwork.owner.get_full_name }}{% else %}{{ artwork.owner.username }}{% endif %}</p>
+                    
+                    <div style="display: flex; gap: 15px; margin-top: 10px;">
+                        <span style="background: #e8f4f8; color: #2980b9; padding: 5px 10px; border-radius: 4px; font-size: 14px; font-weight: bold;">
+                            {% if artwork.semester == 'sem3' %}Semestr 3{% else %}Semestr 4{% endif %}
+                        </span>
+                        <span style="background: #fdfaef; color: #f39c12; padding: 5px 10px; border-radius: 4px; font-size: 14px; font-weight: bold;">
+                            {{ artwork.academic_year }}
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
