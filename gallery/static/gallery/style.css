@@ -341,3 +341,198 @@ input[type="radio"] {
 	font-weight: bold;
 	color: #2c3e50;
 }   
+
+/* =========================================
+   UI COMPONENTS (Buttons, Nav, Forms, Dashboard)
+   ========================================= */
+
+/* --- Navigation Enhancements --- */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #3498db;
+}
+
+.btn-nav {
+    background: #34495e;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-nav:hover {
+    background: #2c3e50;
+}
+
+.logout-form {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.btn-logout {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+.btn-logout:hover {
+    color: #c0392b;
+}
+
+/* --- Dashboard Specifics --- */
+.dashboard-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.dashboard-table th, .dashboard-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.dashboard-table th {
+    background-color: #f8f9fa;
+}
+
+/* --- Dashboard Action Buttons --- */
+.action-btn {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: 5px;
+    display: inline-block;
+    transition: filter 0.3s ease;
+}
+
+.action-btn:hover {
+    filter: brightness(90%); 
+}
+
+.btn-edit { background-color: #f1c40f; color: #333; }
+.btn-delete { background-color: #e74c3c; color: white; }
+
+/* --- Forms & Modals --- */
+.form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #2c3e50; }
+.form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+
+.helptext { font-size: 12px; color: #7f8c8d; display: block; margin-top: 5px; }
+.errorlist { color: #e74c3c; list-style-type: none; padding: 0; margin: 5px 0 0 0; font-size: 14px; font-weight: bold; }
+.non-field-errors { background: #fdfaef; border-left: 4px solid #e74c3c; padding: 10px; margin-bottom: 20px; color: #e74c3c; font-weight: bold; }
+
+/* --- Warning & Success Containers --- */
+.delete-container, .success-container {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* --- Standard Buttons --- */
+.btn-primary {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+.btn-primary:hover { background: #2980b9; }
+
+.btn-secondary {
+    background: #95a5a6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+.btn-secondary:hover { background: #7f8c8d; }
+
+.btn-danger {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+.btn-danger:hover { background: #c0392b; }
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+.form-actions .btn-primary, .form-actions .btn-secondary, .form-actions .btn-danger {
+    flex: 1; 
+}
