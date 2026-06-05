@@ -1,6 +1,6 @@
-# WIT Animacje 3D - Student Gallery Web App
+# WIT Animacje - Student Gallery Web App
 
-A responsive, Django-based Web application designed for university instructors to showcase and manage student animations, VFX projects, and 3D models.
+A responsive, Django-based Web application designed for university instructors to showcase and manage student animations, VFX projects, and models.
 
 ## Features
 * Custom Teacher Dashboard: Secure, authenticated portal for instructors to Add, Edit, and Delete student artworks.
