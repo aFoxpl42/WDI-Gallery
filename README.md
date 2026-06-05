@@ -1,11 +1,11 @@
-# WIT Animacje 3D - Student Gallery CMS
+# WIT Animacje 3D - Student Gallery Web App
 
-A responsive, Django-based Content Management System (CMS) designed for university instructors to showcase and manage student animations, VFX projects, and 3D models.
+A responsive, Django-based Web application designed for university instructors to showcase and manage student animations, VFX projects, and 3D models.
 
 ## Features
 * Custom Teacher Dashboard: Secure, authenticated portal for instructors to Add, Edit, and Delete student artworks.
 * Role-Based Authorization: Backend security ensures instructors can only modify artworks they personally uploaded.
-* Dual-Media Support: Intelligently handles both local .mp4 video uploads and dynamic YouTube iframe embeds.
+* Dual-Media Support: Handles both local .mp4 video uploads and dynamic YouTube iframe embeds.
 * Dynamic Grouping: Artworks are automatically queried and grouped on the frontend by Academic Year and Semester, sorted chronologically.
 * Responsive UI: Fully responsive frontend built natively with CSS Flexbox and Grid.
 
