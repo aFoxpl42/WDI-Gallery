@@ -80,38 +80,39 @@
         <div class="container">
             <h2>Galeria Prac</h2>
 
-            <input type="radio" name="filter" id="filter-all" checked>
-            <input type="radio" name="filter" id="filter-sem3">
-            <input type="radio" name="filter" id="filter-sem4">
+            {% regroup artworks by academic_year as year_groups %}
 
-            <div class="filters">
-                <label for="filter-all" class="filter-btn">Wszystkie</label>
-                <label for="filter-sem3" class="filter-btn">Semestr 3</label>
-                <label for="filter-sem4" class="filter-btn">Semestr 4</label>
-            </div>
+            {% for year in year_groups %}
+                <div style="margin: 40px 0 20px 0; border-bottom: 2px solid #3498db; padding-bottom: 10px;">
+                    <h3 style="color: #2c3e50; font-size: 1.5rem;">Rok Akademicki: {{ year.grouper }}</h3>
+                </div>
 
-            <div class="gallery-grid">
-                {% for artwork in artworks %}
-                <a href="#modal-{{ artwork.id }}" class="gallery-item {{ artwork.semester }}">
-                    
-                    {% if artwork.image %}
-                        <img src="{{ artwork.image.url }}" alt="{{ artwork.title }}">
-                    {% elif artwork.youtube_link %}
-                        <img src="https://img.youtube.com/vi/{{ artwork.youtube_link }}/hqdefault.jpg" alt="{{ artwork.title }}">
-                    {% else %}
-                        <div style="height: 200px; background: #ecf0f1; display: flex; align-items: center; justify-content: center; color: #95a5a6; font-weight: bold;">Brak okładki</div>
-                    {% endif %}
+                <div class="gallery-grid">
+                    {% for artwork in year.list %}
+                    <a href="#modal-{{ artwork.id }}" class="gallery-item">
+                        
+                        {% if artwork.image %}
+                            <img src="{{ artwork.image.url }}" alt="{{ artwork.title }}">
+                        {% elif artwork.youtube_link %}
+                            <img src="https://img.youtube.com/vi/{{ artwork.youtube_link }}/hqdefault.jpg" alt="{{ artwork.title }}">
+                        {% else %}
+                            <div style="height: 200px; background: #ecf0f1; display: flex; align-items: center; justify-content: center; color: #95a5a6; font-weight: bold;">Brak okładki</div>
+                        {% endif %}
 
-                    <div class="item-content">
-                        <h3>{{ artwork.title }}</h3>
-                        <p class="author">{{ artwork.author }}</p>
-                        <span class="badge">
-                            {% if artwork.semester == 'sem3' %}Semestr 3{% else %}Semestr 4{% endif %}
-                        </span>
-                    </div>
-                </a>
-                {% endfor %}
-            </div>
+                        <div class="item-content">
+                            <h3>{{ artwork.title }}</h3>
+                            <p class="author">{{ artwork.author }}</p>
+                            <span class="badge">
+                                {% if artwork.semester == 'sem3' %}Semestr 3{% else %}Semestr 4{% endif %}
+                            </span>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            {% empty %}
+                <p style="text-align: center; color: #7f8c8d; padding: 40px;">Brak prac w galerii.</p>
+            {% endfor %}
+
         </div>
     </section>
 

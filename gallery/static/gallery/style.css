@@ -152,35 +152,6 @@ body {
 	margin-bottom: 40px;
 }
 
-/* Logika filtrowania CSS */
-input[type="radio"] {
-	display: none;
-}
-
-.filters {
-	display: flex;
-	justify-content: center;
-	gap: 15px;
-	margin-bottom: 40px;
-	flex-wrap: wrap;
-}
-
-.filter-btn {
-	padding: 10px 20px;
-	background: #ddd;
-	color: #333;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: 0.3s;
-}
-
-#filter-all:checked~.filters label[for="filter-all"],
-#filter-sem3:checked~.filters label[for="filter-sem3"],
-#filter-sem4:checked~.filters label[for="filter-sem4"] {
-	background: #2c3e50;
-	color: white;
-}
-
 .gallery-grid {
 	display: grid;
 	grid-template-columns: 1fr;
