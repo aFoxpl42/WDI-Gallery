@@ -1,316 +1,308 @@
 /* Reset i zmienne */
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-	background-color: #f4f4f9;
-	color: #333;
-	line-height: 1.6;
-	scroll-behavior: smooth;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 .container {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Nawigacja */
 .navbar {
-	background: #fff;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-	position: sticky;
-	top: 0;
-	z-index: 100;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .nav-container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
 }
 
 .logo {
-	font-size: 1.5rem;
-	font-weight: bold;
-	color: #2c3e50;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
 }
 
 .nav-links {
-	display: flex;
-	gap: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .nav-links a {
-	text-decoration: none;
-	color: #555;
-	font-weight: 500;
-	transition: color 0.3s;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
-	color: #e74c3c;
-}
-
-/* Mobile Menu - proste ułożenie */
-@media (max-width: 768px) {
-	.nav-container {
-		flex-direction: column;
-		gap: 10px;
-	}
+    color: #e74c3c;
 }
 
 /* Hero Section */
 .hero {
-	background: linear-gradient(135deg, #2c3e50, #3498db);
-	color: white;
-	padding: 100px 20px;
-	text-align: center;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
 }
 
 .hero h1 {
-	font-size: 2.5rem;
-	margin-bottom: 15px;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
 .hero p {
-	font-size: 1.2rem;
-	max-width: 600px;
-	margin: 0 auto 30px;
-	opacity: 0.9;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
 }
 
 .btn {
-	display: inline-block;
-	background: #e74c3c;
-	color: white;
-	padding: 12px 30px;
-	text-decoration: none;
-	border-radius: 25px;
-	font-weight: bold;
-	transition: background 0.3s;
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s;
 }
 
 .btn:hover {
-	background: #c0392b;
+    background: #c0392b;
 }
 
 /* O Przedmiocie & Prowadzący */
 .about-section {
-	padding: 80px 0;
-	background: white;
+    padding: 80px 0;
+    background: white;
 }
 
 .about-grid {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
 }
 
 @media (min-width: 768px) {
-	.about-grid {
-		grid-template-columns: 2fr 1fr;
-	}
+    .about-grid {
+        grid-template-columns: 2fr 1fr;
+    }
 }
 
 .course-desc ul {
-	margin-top: 15px;
-	padding-left: 20px;
+    margin-top: 15px;
+    padding-left: 20px;
 }
 
 .teacher-card {
-	display: flex;
-	align-items: center;
-	background: #f9f9f9;
-	padding: 20px;
-	border-radius: 10px;
-	margin-top: 20px;
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
 .teacher-avatar {
-	width: 70px;
-	height: 70px;
-	background: #bdc3c7;
-	border-radius: 50%;
-	margin-right: 20px;
+    width: 70px;
+    height: 70px;
+    background: #bdc3c7;
+    border-radius: 50%;
+    margin-right: 20px;
 }
 
 /* Galeria */
 .gallery-section {
-	padding: 80px 0;
+    padding: 80px 0;
 }
 
 .gallery-section h2 {
-	text-align: center;
-	margin-bottom: 40px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .gallery-grid {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
 }
 
 @media (min-width: 600px) {
-	.gallery-grid {
-		grid-template-columns: repeat(2, 1fr);
-	}
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (min-width: 900px) {
-	.gallery-grid {
-		grid-template-columns: repeat(3, 1fr);
-	}
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 #filter-sem3:checked~.gallery-grid .gallery-item:not(.sem3) {
-	display: none;
+    display: none;
 }
 
 #filter-sem4:checked~.gallery-grid .gallery-item:not(.sem4) {
-	display: none;
+    display: none;
 }
 
 /* Karta pracy */
 .gallery-item {
-	background: white;
-	border-radius: 10px;
-	overflow: hidden;
-	text-decoration: none;
-	color: inherit;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-	transition: transform 0.3s;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
 }
 
 .gallery-item:hover {
-	transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .gallery-item img {
-	width: 100%;
-	height: 200px;
-	object-fit: cover;
-	display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
 }
 
 .item-content {
-	padding: 20px;
+    padding: 20px;
 }
 
 .item-content h3 {
-	margin-bottom: 10px;
-	font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
 }
 
 .author {
-	color: #7f8c8d;
-	margin-bottom: 15px;
+    color: #7f8c8d;
+    margin-bottom: 15px;
 }
 
 .badge {
-	background: #ecf0f1;
-	color: #2980b9;
-	padding: 5px 10px;
-	border-radius: 3px;
-	font-size: 0.85rem;
-	font-weight: bold;
+    background: #ecf0f1;
+    color: #2980b9;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    font-weight: bold;
 }
 
 /* Modal CSS (:target hack) */
 .modal {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.8);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 0.3s;
-	z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 1000;
 }
 
 .modal:target {
-	opacity: 1;
-	visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 
 .modal-content {
-	background: white;
-	width: 90%;
-	max-width: 800px;
-	border-radius: 10px;
-	position: relative;
-	max-height: 90vh;
-	overflow-y: auto;
+    background: white;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .close-btn {
-	position: absolute;
-	top: 15px;
-	right: 20px;
-	font-size: 1.8rem;
-	text-decoration: none;
-	color: #333;
-	line-height: 1;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: #333;
+    line-height: 1;
 }
 
 .modal-header {
-	padding: 20px;
-	border-bottom: 1px solid #eee;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
 }
 
 .modal-body {
-	padding: 20px;
+    padding: 20px;
 }
 
 /* Responywne wideo */
 .video-container {
-	width: 100%;
-	aspect-ratio: 16 / 9;
-	background: #000;
-	border-radius: 5px;
-	overflow: hidden;
-	margin-bottom: 20px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .video-container iframe {
-	width: 100%;
-	height: 100%;
-	border: none;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 .modal-details p {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 /* --- Navbar Logo Styling --- */
 .logo-container {
-	display: flex;
-	align-items: center;
-	gap: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .nav-logo {
-	height: 40px;
-	width: auto;
-	display: block;
+    height: 40px;
+    width: auto;
+    display: block;
 }
 
 .logo-text {
-	font-size: 24px;
-	font-weight: bold;
-	color: #2c3e50;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
 }   
 
 /* =========================================
@@ -318,12 +310,6 @@ body {
    ========================================= */
 
 /* --- Navigation Enhancements --- */
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
 .nav-link {
     color: #555;
     text-decoration: none;
@@ -506,4 +492,63 @@ body {
 }
 .form-actions .btn-primary, .form-actions .btn-secondary, .form-actions .btn-danger {
     flex: 1; 
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN (Mobile & Tablets)
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. Navbar Stacking */
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* 2. Hero Section scaling */
+    .hero {
+        padding: 60px 20px;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    /* 3. Stack the About section (Course Info & Teachers) */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* 4. Adjust Forms and Dashboards for small screens */
+    .form-container, .dashboard-container, .delete-container, .success-container {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+
+    /* 5. Dashboard Header stacking */
+    .dashboard-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    /* 6. Make Form buttons stack vertically */
+    .form-actions {
+        flex-direction: column;
+    }
+
+    /* 7. Make the Dashboard Table scrollable horizontally */
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 }
